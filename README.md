@@ -1,4 +1,4 @@
-# System Dynamic Diagram with roughjs
+# System Dynamic Diagrams with roughjs
 
 rough_sysdyn_diagramm
 
