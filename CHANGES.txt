@@ -1,0 +1,7 @@
+sysdyn_diagramm.js
+
+0.05 2022-09-06 begin
+0.50 2022-09-09 prototype
+0.51 2022-09-10 show as a film / show stepwise
+0.81 2022-09-11 ready to publish
+
