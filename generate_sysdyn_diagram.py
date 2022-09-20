@@ -6,7 +6,7 @@ Generates system dynamics diagramm in HTML format based on input file
 Hans Rauch
 (c) MIT LICENSE
 2022-09-15 / 2022-09-20
-Version 0.80
+Version 0.82
 """
 
 import random
