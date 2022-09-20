@@ -1,0 +1,93 @@
+
+        <!-- immediatly -->
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <svg id="svg_r8759665110" width="800px" height="600px" viewbox="0 0 800 600"></svg>
+            </div>
+        </div>
+        <script>
+            var svg_r8759665110_model = new RoughSd("svg_r8759665110")
+            model = [
+           ["Level", "Mutter", 120, 240, false, true, false, false],
+           ["Const", "Zerfall Mutter", 180, 360, BOTTOM],
+           ["Zerfall Mutter.top", "Mutter.out_rate.bottom", -5, 1],
+           ["Mutter.top", "Mutter.out_rate.top", 30, 2],
+           ["Level", "Tochter", 300, 240, false, true, false, false],
+           ["Const", "Zerfall Tochter", 360, 120, TOP],
+           ["Zerfall Tochter.bottom", "Tochter.out_rate.top", 5, 1],
+           ["Tochter.bottom", "Tochter.out_rate.bottom", -30, 2],
+           ["Level", "Endprod.", 480, 240, false, false, false, false]
+            ]
+            svg_r8759665110_model.create_sd_model(model)
+        </script>
+
+        ------------------------------------------------------
+
+        <!-  as a film -->
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <svg id="svg_r8759665111" width="800px" height="600px" viewbox="0 0 800 600"></svg>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Hinweise zum Diagramm</h5>
+                        <div id="svg_r8759665111_info">Bitte auf den Rechtspfeil klicken ...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var svg_r875966511_model = new RoughSd("svg_r8759665111")
+            model = [
+           ["Level", "Mutter", 120, 240, false, true, false, false, "Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten 'Mutter'-Substanz"], 2,
+           ["Const", "Zerfall Mutter", 180, 360, BOTTOM, "Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet."], 2,
+           ["Zerfall Mutter.top", "Mutter.out_rate.bottom", -5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."], 2,
+           ["Mutter.top", "Mutter.out_rate.top", 30, 2, "Gibt es noch viel von der Ausgangsmenge, dann kann auch viel Material zerfallen."], 2,
+           ["Level", "Tochter", 300, 240, false, true, false, false, "Die beim Zerfall der Mutter-Substant entstehende Substanz ist ebenfalls radioaktiv. Diese Substanz nennen wir 'Tochter'-Substanz."], 2,
+           ["Const", "Zerfall Tochter", 360, 120, TOP, "Wie schnell diese Abnahme erfolgt, wird durch die Zerfallskostante der Tochter-Substanz bestimmt."], 2,
+           ["Zerfall Tochter.bottom", "Tochter.out_rate.top", 5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."], 2,
+           ["Tochter.bottom", "Tochter.out_rate.bottom", -30, 2, "Es zerfällt immer ein bestimmter Prozentsatz der Tochersubstanz"], 2,
+           ["Level", "Endprod.", 480, 240, false, false, false, false, "Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden."], 0
+            ]
+            svg_r8759665111_model.create_sd_model(model)
+        </script>
+
+        -----------------------------------------------------------------
+
+        <!-- stepwise -->
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <svg id="svg_r8759665112" width="800px" height="600px" viewbox="0 0 800 600"></svg>
+            </div>
+            <div class="col-md-3">
+                <div class="col-12 mb-3">
+                    <div class="btn-group" role="group" aria-label="forward / backward">
+                        <button id="svg_r8759665112_btn_prev" class="btn btn-light" onclick="svg_r8759665112_model.draw_prev_obj()"><i class="fas fa-chevron-circle-left"></i></button>
+                        <button id="svg_r8759665112_btn_next" class="btn btn-light" onclick="svg_r8759665112_model.draw_next_obj()"><i class="fas fa-chevron-circle-right"></i></button>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Hinweise zum Diagramm</h5>
+                        <div id="svg_r875966511_info">Bitte auf den Rechtspfeil klicken ...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var svg_r8759665112_model = new RoughSd("svg_r8759665112")
+            model = [
+           ["Level", "Mutter", 120, 240, false, true, false, false, "Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten 'Mutter'-Substanz"],
+           ["Const", "Zerfall Mutter", 180, 360, BOTTOM, "Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet."],
+           ["Zerfall Mutter.top", "Mutter.out_rate.bottom", -5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."],
+           ["Mutter.top", "Mutter.out_rate.top", 30, 2, "Gibt es noch viel von der Ausgangsmenge, dann kann auch viel Material zerfallen."],
+           ["Level", "Tochter", 300, 240, false, true, false, false, "Die beim Zerfall der Mutter-Substant entstehende Substanz ist ebenfalls radioaktiv. Diese Substanz nennen wir 'Tochter'-Substanz."],
+           ["Const", "Zerfall Tochter", 360, 120, TOP, "Wie schnell diese Abnahme erfolgt, wird durch die Zerfallskostante der Tochter-Substanz bestimmt."],
+           ["Zerfall Tochter.bottom", "Tochter.out_rate.top", 5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."],
+           ["Tochter.bottom", "Tochter.out_rate.bottom", -30, 2, "Es zerfällt immer ein bestimmter Prozentsatz der Tochersubstanz"],
+           ["Level", "Endprod.", 480, 240, false, false, false, false, "Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden."]
+            ]
+            svg_r8759665112_model.create_sd_model(model, false)
+        </script>
+    

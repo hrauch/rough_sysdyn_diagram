@@ -1,0 +1,120 @@
+
+        <!-- immediatly -->
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <svg id="svg_r4729080010" width="800px" height="600px" viewbox="0 0 800 600"></svg>
+            </div>
+        </div>
+        <script>
+            var svg_r4729080010_model = new RoughSd("svg_r4729080010")
+            model = [
+           ["Level", " Beute ", 240, 180, true, true, true, true],
+           ["Const", " Geb_rate Beute", 120, 60, TOP ],
+           [" Geb_rate Beute.bottom", " Beute .in_rate.top", -15, 1],
+           [" Beute .top", " Beute .in_rate.top", -30, 1],
+           ["Const", " Ste_rate Beute", 360, 60, TOP ],
+           [" Ste_rate Beute.bottom", " Beute .out_rate.top", 15, 1],
+           [" Beute .top", " Beute .out_rate.top", 30, 1],
+           ["Level", " Räuber ", 240, 360, true, true, true, true],
+           ["Const", " Geb_rate Räuber", 120, 480, BOTTOM ],
+           [" Geb_rate Räuber.top", " Räuber .in_rate.bottom", 15, 1],
+           [" Räuber .bottom", " Räuber .in_rate.bottom", 30, 1],
+           ["Const", " Ste_rate Räuber ", 360, 480,  BOTTOM ],
+           [" Ste_rate Räuber .top", " Räuber .out_rate.bottom", -15, 1],
+           [" Räuber .bottom", " Räuber .out_rate.bottom", -30, 1],
+           [" Beute .bottom", " Räuber .in_rate.top", -20, 3],
+           [" Räuber .top", " Beute .out_rate.bottom", -20, 3],
+           ["Info", "Und damit schließt sich der Kreis."],
+           ["Info", "Schön, dass du dir dieses Diagramm erarbeitet hast!"]
+            ]
+            svg_r4729080010_model.create_sd_model(model)
+        </script>
+
+        ------------------------------------------------------
+
+        <!-  as a film -->
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <svg id="svg_r4729080011" width="800px" height="600px" viewbox="0 0 800 600"></svg>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Hinweise zum Diagramm</h5>
+                        <div id="svg_r4729080011_info">Bitte auf den Rechtspfeil klicken ...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var svg_r472908001_model = new RoughSd("svg_r4729080011")
+            model = [
+           ["Level", " Beute ", 240, 180, true, true, true, true, "Der große Kreislauf beginnt mit den Beutetieren."], 2,
+           ["Const", " Geb_rate Beute", 120, 60, TOP , "Die Geburtenrate bestimmt grundsätzlich, wie schnell sich die Beutetiere vermehren."], 1,
+           [" Geb_rate Beute.bottom", " Beute .in_rate.top", -15, 1, ""], 0,
+           [" Beute .top", " Beute .in_rate.top", -30, 1, "Viele Beutetiere haben auch für viel Nachwuchs. Wenige Beutetiere haben auch nur wenige Nachkommen."], 2,
+           ["Const", " Ste_rate Beute", 360, 60, TOP , "Die Sterberate beschreibt, wie lange die Tiere durchschnittlich leben."], 1,
+           [" Ste_rate Beute.bottom", " Beute .out_rate.top", 15, 1, ""], 0,
+           [" Beute .top", " Beute .out_rate.top", 30, 1, "Gibt es viele Beutetiere, so sterben natürlich auch viele Beutetiere."], 2,
+           ["Level", " Räuber ", 240, 360, true, true, true, true, "Die Welt sähe ohne Räuber ganz anders aus."], 2,
+           ["Const", " Geb_rate Räuber", 120, 480, BOTTOM , "Die Geburtenrate wirkt ähnlich wie bei den Beutetieren."], 0,
+           [" Geb_rate Räuber.top", " Räuber .in_rate.bottom", 15, 1, ""], 0,
+           [" Räuber .bottom", " Räuber .in_rate.bottom", 30, 1, "Viele Räuber haben viele Nachkommen."], 2,
+           ["Const", " Ste_rate Räuber ", 360, 480,  BOTTOM , ""], 0,
+           [" Ste_rate Räuber .top", " Räuber .out_rate.bottom", -15, 1, "Geburten- und Sterberate wirken wie bei den Beutetieren."], 2,
+           [" Räuber .bottom", " Räuber .out_rate.bottom", -30, 1, ""], 0,
+           [" Beute .bottom", " Räuber .in_rate.top", -20, 3, "Die Beutetiere sorgen dafür, dass viele Nachkommen der Räuber überleben."], 3,
+           [" Räuber .top", " Beute .out_rate.bottom", -20, 3, "Die Jäger sorgen dafür, dass die Anzahl der Beutetiere nicht zu stark anwächst."], 3,
+           ["Info", "Und damit schließt sich der Kreis."], 2,
+           ["Info", "Schön, dass du dir dieses Diagramm erarbeitet hast!"], 0
+            ]
+            svg_r4729080011_model.create_sd_model(model)
+        </script>
+
+        -----------------------------------------------------------------
+
+        <!-- stepwise -->
+        <div class="row mt-3">
+            <div class="col-md-9">
+                <svg id="svg_r4729080012" width="800px" height="600px" viewbox="0 0 800 600"></svg>
+            </div>
+            <div class="col-md-3">
+                <div class="col-12 mb-3">
+                    <div class="btn-group" role="group" aria-label="forward / backward">
+                        <button id="svg_r4729080012_btn_prev" class="btn btn-light" onclick="svg_r4729080012_model.draw_prev_obj()"><i class="fas fa-chevron-circle-left"></i></button>
+                        <button id="svg_r4729080012_btn_next" class="btn btn-light" onclick="svg_r4729080012_model.draw_next_obj()"><i class="fas fa-chevron-circle-right"></i></button>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Hinweise zum Diagramm</h5>
+                        <div id="svg_r472908001_info">Bitte auf den Rechtspfeil klicken ...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var svg_r4729080012_model = new RoughSd("svg_r4729080012")
+            model = [
+           ["Level", " Beute ", 240, 180, true, true, true, true, "Der große Kreislauf beginnt mit den Beutetieren."],
+           ["Const", " Geb_rate Beute", 120, 60, TOP , "Die Geburtenrate bestimmt grundsätzlich, wie schnell sich die Beutetiere vermehren."],
+           [" Geb_rate Beute.bottom", " Beute .in_rate.top", -15, 1, ""],
+           [" Beute .top", " Beute .in_rate.top", -30, 1, "Viele Beutetiere haben auch für viel Nachwuchs. Wenige Beutetiere haben auch nur wenige Nachkommen."],
+           ["Const", " Ste_rate Beute", 360, 60, TOP , "Die Sterberate beschreibt, wie lange die Tiere durchschnittlich leben."],
+           [" Ste_rate Beute.bottom", " Beute .out_rate.top", 15, 1, ""],
+           [" Beute .top", " Beute .out_rate.top", 30, 1, "Gibt es viele Beutetiere, so sterben natürlich auch viele Beutetiere."],
+           ["Level", " Räuber ", 240, 360, true, true, true, true, "Die Welt sähe ohne Räuber ganz anders aus."],
+           ["Const", " Geb_rate Räuber", 120, 480, BOTTOM , "Die Geburtenrate wirkt ähnlich wie bei den Beutetieren."],
+           [" Geb_rate Räuber.top", " Räuber .in_rate.bottom", 15, 1, ""],
+           [" Räuber .bottom", " Räuber .in_rate.bottom", 30, 1, "Viele Räuber haben viele Nachkommen."],
+           ["Const", " Ste_rate Räuber ", 360, 480,  BOTTOM , ""],
+           [" Ste_rate Räuber .top", " Räuber .out_rate.bottom", -15, 1, "Geburten- und Sterberate wirken wie bei den Beutetieren."],
+           [" Räuber .bottom", " Räuber .out_rate.bottom", -30, 1, ""],
+           [" Beute .bottom", " Räuber .in_rate.top", -20, 3, "Die Beutetiere sorgen dafür, dass viele Nachkommen der Räuber überleben."],
+           [" Räuber .top", " Beute .out_rate.bottom", -20, 3, "Die Jäger sorgen dafür, dass die Anzahl der Beutetiere nicht zu stark anwächst."],
+           ["Info", "Und damit schließt sich der Kreis."],
+           ["Info", "Schön, dass du dir dieses Diagramm erarbeitet hast!"]
+            ]
+            svg_r4729080012_model.create_sd_model(model, false)
+        </script>
+    

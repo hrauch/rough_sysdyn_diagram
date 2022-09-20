@@ -16,7 +16,7 @@
 
 <div class="container mt-3">
 
-    <h3>Example 1: Show diagram imediatly</h3>
+    <h3>Example 1: Show diagram immediatly</h3>
     <div class="row mt-3">
         <div class="col-md-9">
             <svg id="svg_123" width="800px" height="600px" viewbox="0 0 800 600"></svg>
@@ -25,14 +25,16 @@
     <script>
         var svg_123_model = new RoughSd("svg_123")
         model = [
-            ['Level', 'Mutter', 120, 150, false, true, false, false],
-            ['Level', 'Tochter', 300, 150, false, true, false, false],
-            ['Level', 'Endprod.', 480, 150, false, false],
-            ['Const', 'Zerfall Mutter', 160 - 80 + 50, 300, BOTTOM],
-            ['Const', 'Zerfall Tochter', 480 - 50, 50, TOP],
+           ["Level", "Mutter", 120, 240, false, true, false, false],
+           ["Level", "Tochter", 300, 240, false, true, false, false],
+           ["Level", "Endprod.", 480, 240, false, false, false, false]
+           ["Const", "Zerfall Mutter", 180, 360, BOTTOM],
+           ["Const", "Zerfall Tochter", 360, 120, TOP],
 
-            ['Zerfall Mutter.top', 'Mutter.out_rate.bottom', -20],
-            ['Zerfall Tochter.bottom', 'Tochter.out_rate.top', -10]
+           ["Zerfall Mutter.top", "Mutter.out_rate.bottom", -5, 1],
+           ["Mutter.top", "Mutter.out_rate.top", 30, 2],
+           ["Zerfall Tochter.bottom", "Tochter.out_rate.top", 5, 1],
+           ["Tochter.bottom", "Tochter.out_rate.bottom", -30, 2],
         ]
         svg_123_model.create_sd_model(model)
     </script>
@@ -55,20 +57,15 @@
     <script>
         var svg_123b_model = new RoughSd("svg_123b")
         model = [
-            ['Level', 'Mutter', 120, 150, false, true, false, false,
-                'Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten "Mutter"-Substanz'], 1,
-            ['Const', 'Zerfall Mutter', 130, 300, BOTTOM,
-                'Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet.'], 1,
-            ['Zerfall Mutter.top', 'Mutter.out_rate.bottom', -20,
-                'Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt.'], 2,
-            ['Level', 'Tochter', 300, 150, false, true, false, false,
-                'Die beim Zerfall der Mutter-Substant entstehende Substanz ist ebenfalls radioaktiv. Diese Substanz nennen wir "Tochter"-Substanz.'], 1,
-            ['Const', 'Zerfall Tochter', 480 - 50, 50, TOP,
-                'Wie schnell diese Abnahme erfolgt, wird durch die Zerfallskostante der Tochter-Substanz bestimmt.'], 1,
-            ['Zerfall Tochter.bottom', 'Tochter.out_rate.top', -20,
-                'Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt.'], 2,
-            ['Level', 'Endprod.', 480, 150, false, false, false, false,
-                'Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden.']
+           ["Level", "Mutter", 120, 240, false, true, false, false, "Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten 'Mutter'-Substanz"], 2,
+           ["Const", "Zerfall Mutter", 180, 360, BOTTOM, "Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet."], 2,
+           ["Zerfall Mutter.top", "Mutter.out_rate.bottom", -5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."], 2,
+           ["Mutter.top", "Mutter.out_rate.top", 30, 2, "Gibt es noch viel von der Ausgangsmenge, dann kann auch viel Material zerfallen."], 2,
+           ["Level", "Tochter", 300, 240, false, true, false, false, "Die beim Zerfall der Mutter-Substant entstehende Substanz ist ebenfalls radioaktiv. Diese Substanz nennen wir 'Tochter'-Substanz."], 2,
+           ["Const", "Zerfall Tochter", 360, 120, TOP, "Wie schnell diese Abnahme erfolgt, wird durch die Zerfallskostante der Tochter-Substanz bestimmt."], 2,
+           ["Zerfall Tochter.bottom", "Tochter.out_rate.top", 5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."], 2,
+           ["Tochter.bottom", "Tochter.out_rate.bottom", -30, 2, "Es zerfällt immer ein bestimmter Prozentsatz der Tochersubstanz"], 2,
+           ["Level", "Endprod.", 480, 240, false, false, false, false, "Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden."], 0
         ]
         svg_123b_model.create_sd_model(model)
     </script>
@@ -97,20 +94,15 @@
     <script>
         var svg_123a_model = new RoughSd("svg_123a")
         model = [
-            ['Level', 'Mutter', 120, 150, false, true, false, false,
-                'Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten "Mutter"-Substanz'],
-            ['Const', 'Zerfall Mutter', 130, 300, BOTTOM,
-                'Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet.'],
-            ['Zerfall Mutter.top', 'Mutter.out_rate.bottom', -20,
-                'Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt.'],
-            ['Level', 'Tochter', 300, 150, false, true, false, false,
-                'Die beim Zerfall der Mutter-Substant entstehende Substanz ist ebenfalls radioaktiv. Diese Substanz nennen wir "Tochter"-Substanz.'],
-            ['Const', 'Zerfall Tochter', 480 - 50, 50, TOP,
-                'Wie schnell diese Abnahme erfolgt, wird durch die Zerfallskostante der Tochter-Substanz bestimmt.'],
-            ['Zerfall Tochter.bottom', 'Tochter.out_rate.top', -20,
-                'Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt.'],
-            ['Level', 'Endprod.', 480, 150, false, false, false, false,
-                'Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden.']
+           ["Level", "Mutter", 120, 240, false, true, false, false, "Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten 'Mutter'-Substanz"],
+           ["Const", "Zerfall Mutter", 180, 360, BOTTOM, "Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet."],
+           ["Zerfall Mutter.top", "Mutter.out_rate.bottom", -5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."],
+           ["Mutter.top", "Mutter.out_rate.top", 30, 2, "Gibt es noch viel von der Ausgangsmenge, dann kann auch viel Material zerfallen."],
+           ["Level", "Tochter", 300, 240, false, true, false, false, "Die beim Zerfall der Mutter-Substant entstehende Substanz ist ebenfalls radioaktiv. Diese Substanz nennen wir 'Tochter'-Substanz."],
+           ["Const", "Zerfall Tochter", 360, 120, TOP, "Wie schnell diese Abnahme erfolgt, wird durch die Zerfallskostante der Tochter-Substanz bestimmt."],
+           ["Zerfall Tochter.bottom", "Tochter.out_rate.top", 5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."],
+           ["Tochter.bottom", "Tochter.out_rate.bottom", -30, 2, "Es zerfällt immer ein bestimmter Prozentsatz der Tochersubstanz"],
+           ["Level", "Endprod.", 480, 240, false, false, false, false, "Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden."]
         ]
         svg_123a_model.create_sd_model(model, false)
     </script>
@@ -139,35 +131,24 @@
     <script>
         var svg_345_model = new RoughSd("svg_345")
         model = [
-            ['Level', 'Beute', 300, 150, true, true, true, true,
-                'Alles beginnt mit den Beutetieren'],
-            ['Const', 'Geb_rate Beute', 250 - 100, 50, TOP,
-                'Die Geburtenrate legt fest, wie schnell sich die Beutetiere vermehren können.'],
-            ['Const', 'Ste_rate Beute', 350 + 100, 50, TOP,
-                'Natürlich sterben die Beutetiere auch. Dies wird insbesondere durch die Sterberate bestimmt.'],
-            ['Geb_rate Beute.bottom', 'Beute.in_rate.top', 20,
-                'Dieser Pfeil bedeutet: Die Geburtenrate wirkt auf die Beutetiere verstärkend ein.'],
-            ['Ste_rate Beute.bottom', 'Beute.out_rate.top', -20,
-                'Dieser Pfeil bedeutet: Die Sterberate wirkt auf die Beutetiere abschwächend ein.'],
-            ['Beute.top', 'Beute.in_rate.top', -40, 2,
-                'Viele Beutetiere haben viele Nachkommen; wenige Beutetiere haben wenige Nachkommen.'],
-            ['Beute.top', 'Beute.out_rate.top', 40, 2,
-                'Viele Beutetiere bedeuten auch viele Sterbefälle; wenige Beutetiere bedeuten wenige Sterbefälle.'],
-            ['Level', 'Räuber', 300, 300, true, true, true, true,
-                'Ohne Räuber sähe die Welt ganz anders aus ...'],
-            ['Const', 'Geb_rate Räuber', 250 - 100, 400, BOTTOM,
-                'Die Geburten- und Sterberate der Räuber haben zwar andere Werte, wirken aber in gleicher Weise.'],
-            ['Const', 'Ste_rate Räuber', 350 + 100, 400, BOTTOM],
-            ['Geb_rate Räuber.top', 'Räuber.in_rate.bottom', -20,
-                'Auch für die Räuber gilt: Die tatsächliche Anzahl der Räuber bestimmt maßgeblich die Anzahl der Geburten und Todesfälle'],
-            ['Ste_rate Räuber.top', 'Räuber.out_rate.bottom', 20],
-            ['Räuber.bottom', 'Räuber.in_rate.bottom', 40, 2],
-            ['Räuber.bottom', 'Räuber.out_rate.bottom', -40, 2],
-            ['Beute.bottom', 'Räuber.in_rate.top', -20, 3,
-                'Viele Beutetiere bedeuten, dass viele Nachkommen überleben können, die Anzahl der Räuber also zunimmt.'],
-            ['Räuber.top', 'Beute.out_rate.bottom', -20, 3,
-                'Viele Räuber bedeutet, dass die Anzahl der Beutetiere abnimmt. Damit verringern die Räuber die Nahrungsgrundlage für weitere Nachkommen.'],
-            ['Info', 'Der Kreislauf schließt sich ...']
+           ["Level", "Beute", 240, 180, true, true, true, true, "Der große Kreislauf beginnt mit den Beutetieren."],
+           ["Const", "Geb_rate Beute", 120, 60, TOP , "Die Geburtenrate bestimmt grundsätzlich, wie schnell sich die Beutetiere vermehren."],
+           ["Geb_rate Beute.bottom", "Beute.in_rate.top", -15, 1, ""],
+           ["Beute .top", "Beute.in_rate.top", -30, 1, "Viele Beutetiere haben auch für viel Nachwuchs. Wenige Beutetiere haben auch nur wenige Nachkommen."],
+           ["Const", "Ste_rate Beute", 360, 60, TOP , "Die Sterberate beschreibt, wie lange die Tiere durchschnittlich leben."],
+           ["Ste_rate Beute.bottom", "Beute.out_rate.top", 15, 1, ""],
+           ["Beute.top", "Beute.out_rate.top", 30, 1, "Gibt es viele Beutetiere, so sterben natürlich auch viele Beutetiere."],
+           ["Level", "Räuber", 240, 360, true, true, true, true, "Die Welt sähe ohne Räuber ganz anders aus."],
+           ["Const", "Geb_rate Räuber", 120, 480, BOTTOM , "Die Geburtenrate wirkt ähnlich wie bei den Beutetieren."],
+           ["Geb_rate Räuber.top", "Räuber.in_rate.bottom", 15, 1, ""],
+           ["Räuber.bottom", "Räuber.in_rate.bottom", 30, 1, "Viele Räuber haben viele Nachkommen."],
+           ["Const", "Ste_rate Räuber", 360, 480,  BOTTOM , ""],
+           ["Ste_rate Räuber .top", "Räuber.out_rate.bottom", -15, 1, "Geburten- und Sterberate wirken wie bei den Beutetieren."],
+           ["Räuber.bottom", " Räuber.out_rate.bottom", -30, 1, ""],
+           ["Beute.bottom", " Räuber.in_rate.top", -20, 3, "Die Beutetiere sorgen dafür, dass viele Nachkommen der Räuber überleben."],
+           ["Räuber.top", " Beute.out_rate.bottom", -20, 3, "Die Jäger sorgen dafür, dass die Anzahl der Beutetiere nicht zu stark anwächst."],
+           ["Info", "Und damit schließt sich der Kreis."],
+           ["Info", "Schön, dass du dir dieses Diagramm erarbeitet hast!"]
         ]
         svg_345_model.create_sd_model(model, false)
     </script>

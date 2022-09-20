@@ -1,0 +1,52 @@
+beute = Level : Beute : 8,6 : cloud_in, out_cloud
+g_beute = Const : Geb_rate Beute|top : -4,-4
+s_beute = Const : Ste_rate Beute|top : +4,-4
+
+raeuber = Level : Räuber : 8,12 : cloud_in, out_cloud
+g_raeuber = Const : Geb_rate Räuber|bottom : -4,+4
+s_raeuber = Const : Ste_rate Räuber | bottom : +4,+4
+
+
+g_beute -> beute.in : -3
+s_beute -> beute.out : 3
+beute.top -> in : -6
+beute.top -> out : 6
+
+g_raeuber -> raeuber.in : 3
+s_raeuber -> raeuber.out : -3
+raeuber.bottom -> in : 6
+raeuber.bottom -> out : -6
+
+beute ---> raeuber.in : -4						# beute.bottom -> raeuber.in.top
+raeuber ---> beute.out : -4						# raeuber.top -> beute.out.bottom
+
+
+beute (2) = Der große Kreislauf beginnt mit den Beutetieren.
+
+g_beute (1) = Die Geburtenrate bestimmt grundsätzlich, wie schnell sich die Beutetiere vermehren.
+g_beute -> beute.in
+beute -> in (2) = Viele Beutetiere haben auch für viel Nachwuchs. Wenige Beutetiere haben auch nur wenige Nachkommen.
+
+s_beute (1) = Die Sterberate beschreibt, wie lange die Tiere durchschnittlich leben.
+s_beute -> beute.out
+beute -> out (2) = Gibt es viele Beutetiere, so sterben natürlich auch viele Beutetiere.
+
+raeuber (2) = Die Welt sähe ohne Räuber ganz anders aus.
+
+g_raeuber = Die Geburtenrate wirkt ähnlich wie bei den Beutetieren.
+g_raeuber -> raeuber.in
+raeuber -> in (2) = Viele Räuber haben viele Nachkommen.
+
+s_raeuber
+s_raeuber -> raeuber.out (2) = Geburten- und Sterberate wirken wie bei den Beutetieren.
+raeuber -> out
+
+beute -> raeuber.in (3) = Die Beutetiere sorgen dafür, dass viele Nachkommen der Räuber überleben.
+raeuber -> beute.out (3) = Die Jäger sorgen dafür, dass die Anzahl der Beutetiere nicht zu stark anwächst.
+
+(2) Und damit schließt sich der Kreis.
+Schön, dass du dir dieses Diagramm erarbeitet hast!
+
+
+
+

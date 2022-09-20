@@ -1,0 +1,20 @@
+mutter=Level:Mutter:4,8:out
+zerfall_mutter = Const:Zerfall Mutter|bottom:+2,+4
+tochter = Level:Tochter:10,8:out
+zerfall_tochter = Const:Zerfall Tochter|top:+2,-4
+endprodukt = Level:Endprod.:16,8:
+
+zerfall_mutter -> mutter.out:-1
+mutter.top --> mutter.out.top:6
+zerfall_tochter -> tochter.out:1
+tochter.bottom --> tochter.out.bottom:-6
+
+mutter (2) = Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten "Mutter"-Substanz
+zerfall_mutter (2) = Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet.
+zerfall_mutter --> mutter.out (2) = Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt.
+mutter -> mutter.out (2) = Gibt es noch viel von der Ausgangsmenge, dann kann auch viel Material zerfallen.
+tochter (2) = Die beim Zerfall der Mutter-Substant entstehende Substanz ist ebenfalls radioaktiv. Diese Substanz nennen wir "Tochter"-Substanz.
+zerfall_tochter (2) = Wie schnell diese Abnahme erfolgt, wird durch die Zerfallskostante der Tochter-Substanz bestimmt.
+zerfall_tochter -> tochter.out (2) = Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt.
+tochter -> tochter.out (2) = Es zerfällt immer ein bestimmter Prozentsatz der Tochersubstanz
+endprodukt = Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden.
