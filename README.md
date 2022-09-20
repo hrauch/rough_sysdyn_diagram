@@ -1,6 +1,6 @@
 # System Dynamic Diagrams with roughjs
 
-rough_sysdyn_diagramm
+rough_sysdyn_diagram
 
 You can draw System Dynamics diagrams in rough mode. 
 
