@@ -1,7 +1,9 @@
 sysdyn_diagramm.js
 
-0.05 2022-09-06 begin
-0.50 2022-09-09 prototype
-0.51 2022-09-10 show as a film / show stepwise
-0.81 2022-09-11 ready to publish
+0.83 2022-09-21 URL_SNS inside class; some trims
+                generate_sysdyn_diagram.py: some strips()
 0.82 2022-09-20 rough_sysdyn_diagram.js 
+0.81 2022-09-11 ready to publish
+0.51 2022-09-10 show as a film / show stepwise
+0.50 2022-09-09 prototype
+0.05 2022-09-06 begin

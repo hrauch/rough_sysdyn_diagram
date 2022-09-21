@@ -228,7 +228,7 @@ def generate_sd_diagram (model_raw):
         name = name.strip()
         obj = attrs[0].strip()
         s = attrs[1].split('|')
-        title = s[0]
+        title = s[0].strip()
         if len(s) == 1:
             position = 'TOP'
         else:
@@ -291,7 +291,14 @@ def generate_sd_diagram (model_raw):
                 })
         else:
             node = model_vars[name]
-            sequence.append(name, node.delay, get_js_string(node.info))
+            if 'delay' in node and 'info' in node:
+                sequence.append((name, node.delay, get_js_string(node.info)))
+            elif 'delay' in node:
+                sequence.append((name, node.delay, ''))
+            elif 'info' in node:
+                sequence.append((name, 0, get_js_string(node.info)))
+            else:
+                sequence.append((name, 0, ''))
         return abs_x, abs_y
 
 
@@ -306,7 +313,7 @@ def generate_sd_diagram (model_raw):
             name = name[:n_pos].strip()
         else:
             delay = 0
-        model_vars[name]['info'] = attrs[0]
+        model_vars[name]['info'] = attrs[0].strip()
         model_vars[name]['delay'] = delay
         return name, delay, attrs[0]
 

@@ -4,13 +4,12 @@
  * Author: Hans Rauch
  * License: MIT License
  * Created: 2022-09-06
- * Last modified: 2022-09-11
- * Version: 0.81
+ * Last modified: 2022-09-21
+ * Version: 0.83
  *
  * Draws System Dynamics diagrams in rough mode.
 */
  
-const URL_SNS = "http://www.w3.org/2000/svg"
 
 // Positions for connections between nodes
 const TOP = 1
@@ -29,6 +28,8 @@ function show_info(obj, info) {
 }
 
 class RoughSdDraw {
+
+    URL_SNS = "http://www.w3.org/2000/svg"
 
     canvas_name = ''
     svg = null      // canvas
@@ -80,7 +81,7 @@ class RoughSdDraw {
 
     get_popover(title, info) {
         // create bootstrap popover
-        let link = document.createElementNS(URL_SNS, "a");
+        let link = document.createElementNS(this.URL_SNS, "a");
         link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', 'javascript://');
         link.setAttributeNS(null,"tabindex", "0")
         link.setAttributeNS(null,"class", "d-inline-block")
@@ -96,7 +97,7 @@ class RoughSdDraw {
 
     draw_title(svg, x, y, title, position, stroke='black') {
         // Draw title for the different nodes
-        svg = document.createElementNS(URL_SNS, 'text')
+        svg = document.createElementNS(this.URL_SNS, 'text')
         let l = 0
         switch (position) {
             case TOP:
@@ -169,7 +170,7 @@ class RoughSdDraw {
         let x0 = xy.x - this.l_width / 2
         let y0 = xy.y - this.l_height / 2
         svg_level = this.rc.rectangle(x0, y0, this.l_width, this.l_height,
-            {fill: this.preview_color, stroke: fill})
+            {fill: this.preview_color, stroke: stroke})
         level.appendChild(svg_level)
         level.appendChild(this.draw_title(svg_level, xy.x, xy.y, title, CENTER, stroke))
         return level
@@ -516,6 +517,8 @@ class RoughSd extends RoughSdDraw {
     }
 
     add_obj (obj, title, x, y, position, info='') {
+        title = title.trim()
+		info = info.trim()
         let id = this.generate_id(title)
         let conn =  this.get_connectors(obj, x, y)
         this.model[id] = {
@@ -535,6 +538,8 @@ class RoughSd extends RoughSdDraw {
     }
 
     add_level (title, x, y, rate_in, rate_out, cloud_in=true, cloud_out=true, info='') {
+        title = title.trim()
+        info = info.trim()
         let node = this.add_obj('Level', title, x, y, CENTER, info)
         node.in_rate = null
         node.out_rate = null
@@ -556,6 +561,7 @@ class RoughSd extends RoughSdDraw {
     }
 
     add_connection (id, xy_from, xy_to, bend, stroke_width, info) {
+		info = info.trim()
         this.model[id] = {
             id: id,
             obj: 'Conn',
@@ -765,8 +771,8 @@ class RoughSd extends RoughSdDraw {
                         text += 1
                         break
                     default:
-                        let xy_from = this.string_to_obj(obj[0].split('.'))
-                        let xy_to = this.string_to_obj(obj[1].split('.'))
+                        let xy_from = this.string_to_obj(obj[0].trim().split('.'))
+                        let xy_to = this.string_to_obj(obj[1].trim().split('.'))
                         const bend = parseInt(obj[2])
                         let info = ''
                         let stroke_width = 1

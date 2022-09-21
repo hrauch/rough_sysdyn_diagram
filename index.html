@@ -27,7 +27,7 @@
         model = [
            ["Level", "Mutter", 120, 240, false, true, false, false],
            ["Level", "Tochter", 300, 240, false, true, false, false],
-           ["Level", "Endprod.", 480, 240, false, false, false, false]
+           ["Level", "Endprod.", 480, 240, false, false, false, false],
            ["Const", "Zerfall Mutter", 180, 360, BOTTOM],
            ["Const", "Zerfall Tochter", 360, 120, TOP],
 
@@ -134,7 +134,7 @@
            ["Level", "Beute", 240, 180, true, true, true, true, "Der große Kreislauf beginnt mit den Beutetieren."],
            ["Const", "Geb_rate Beute", 120, 60, TOP , "Die Geburtenrate bestimmt grundsätzlich, wie schnell sich die Beutetiere vermehren."],
            ["Geb_rate Beute.bottom", "Beute.in_rate.top", -15, 1, ""],
-           ["Beute .top", "Beute.in_rate.top", -30, 1, "Viele Beutetiere haben auch für viel Nachwuchs. Wenige Beutetiere haben auch nur wenige Nachkommen."],
+           ["Beute.top", "Beute.in_rate.top", -30, 1, "Viele Beutetiere haben auch für viel Nachwuchs. Wenige Beutetiere haben auch nur wenige Nachkommen."],
            ["Const", "Ste_rate Beute", 360, 60, TOP , "Die Sterberate beschreibt, wie lange die Tiere durchschnittlich leben."],
            ["Ste_rate Beute.bottom", "Beute.out_rate.top", 15, 1, ""],
            ["Beute.top", "Beute.out_rate.top", 30, 1, "Gibt es viele Beutetiere, so sterben natürlich auch viele Beutetiere."],
@@ -143,10 +143,10 @@
            ["Geb_rate Räuber.top", "Räuber.in_rate.bottom", 15, 1, ""],
            ["Räuber.bottom", "Räuber.in_rate.bottom", 30, 1, "Viele Räuber haben viele Nachkommen."],
            ["Const", "Ste_rate Räuber", 360, 480,  BOTTOM , ""],
-           ["Ste_rate Räuber .top", "Räuber.out_rate.bottom", -15, 1, "Geburten- und Sterberate wirken wie bei den Beutetieren."],
-           ["Räuber.bottom", " Räuber.out_rate.bottom", -30, 1, ""],
-           ["Beute.bottom", " Räuber.in_rate.top", -20, 3, "Die Beutetiere sorgen dafür, dass viele Nachkommen der Räuber überleben."],
-           ["Räuber.top", " Beute.out_rate.bottom", -20, 3, "Die Jäger sorgen dafür, dass die Anzahl der Beutetiere nicht zu stark anwächst."],
+           ["Ste_rate Räuber.top", "Räuber.out_rate.bottom", -15, 1, "Geburten- und Sterberate wirken wie bei den Beutetieren."],
+           ["Räuber.bottom", "Räuber.out_rate.bottom", -30, 1, ""],
+           ["Beute.bottom", "Räuber.in_rate.top", -20, 3, "Die Beutetiere sorgen dafür, dass viele Nachkommen der Räuber überleben."],
+           ["Räuber.top", "Beute.out_rate.bottom", -20, 3, "Die Jäger sorgen dafür, dass die Anzahl der Beutetiere nicht zu stark anwächst."],
            ["Info", "Und damit schließt sich der Kreis."],
            ["Info", "Schön, dass du dir dieses Diagramm erarbeitet hast!"]
         ]
