@@ -47,6 +47,13 @@
         </div>
         <div class="col-md-3">
             <div class="card" style="width: 18rem;">
+                <div class="col-12 mb-3">
+                    <div class="btn-group" role="group" aria-label="forward / backward">
+                        <button id="svg_123b_btn_start" class="btn btn-light" onclick="do_start_123b_model()">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">Hinweise zum Diagramm</h5>
                     <div id="svg_123b_info">Bitte auf den Rechtspfeil klicken ...</div>
@@ -56,7 +63,13 @@
     </div>
     <script>
         var svg_123b_model = new RoughSd("svg_123b")
-        model = [
+        function do_start_123b_model() {
+            while (svg_123b.lastChild) {
+                svg_123b.removeChild(svg_123b.lastChild);
+            }
+            svg_123b_model.create_sd_model(model_123b)
+        }
+        model_123b = [
            ["Level", "Mutter", 120, 240, false, true, false, false, "Wir beginnen unsere Betrachtung mit einer radioaktiven Ausgangssubstanz, der sogenannten 'Mutter'-Substanz"], 2,
            ["Const", "Zerfall Mutter", 180, 360, BOTTOM, "Die Zerfallskonstante der Mutter bestimmt, wie schnell dieser Zerfall stattfindet."], 2,
            ["Zerfall Mutter.top", "Mutter.out_rate.bottom", -5, 1, "Die Abnahme des Materials wird mit einem stilisierten Ventil dargestellt."], 2,
@@ -67,7 +80,7 @@
            ["Tochter.bottom", "Tochter.out_rate.bottom", -30, 2, "Es zerfällt immer ein bestimmter Prozentsatz der Tochersubstanz"], 2,
            ["Level", "Endprod.", 480, 240, false, false, false, false, "Am Ende des gesamten Prozesses ist ein stabiles Endprodukt entstanden."], 0
         ]
-        svg_123b_model.create_sd_model(model)
+        //svg_123b_model.create_sd_model(model)
     </script>
 
 

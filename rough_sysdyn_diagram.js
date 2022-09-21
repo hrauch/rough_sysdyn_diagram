@@ -422,7 +422,7 @@ class RoughSd extends RoughSdDraw {
     model = {}
     model_keys = []
     n_curr = 0
-
+     
     constructor(canvas_name) {
         super(canvas_name)
     }
@@ -681,6 +681,7 @@ class RoughSd extends RoughSdDraw {
                 break
         }
     }
+
 
     async draw_model () {
         for (let key in this.model) {
