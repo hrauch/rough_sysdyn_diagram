@@ -14,6 +14,8 @@ rough_sysdyn_diagram can be used in three modes:
 
 If you choose option 2 or three you can show additional informations for your audience.
 
+You can try this [demo](https://assets.eloqueasy.de/rough_sysdyn_diagram/).
+
 ## Example 1: Show diagram immediatly
 
 ![The complete diagram](screenshot_01.png "The diagram is visible immediatly")
@@ -306,3 +308,6 @@ If you just want to show a text information, you can use *Info*.
 
     python generate_sysdyn_diagram.py filename
 
+# See also
+
+* [Roughjs](https://roughjs.com/)
