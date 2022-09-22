@@ -1,6 +1,6 @@
 # System Dynamic Diagrams with roughjs
 
-rough_sysdyn_diagram
+rough_sysdyn_diagram / You can try this [demo](https://assets.eloqueasy.de/rough_sysdyn_diagram/).
 
 You can draw System Dynamics diagrams in rough mode. 
 
@@ -14,7 +14,6 @@ rough_sysdyn_diagram can be used in three modes:
 
 If you choose option 2 or three you can show additional informations for your audience.
 
-You can try this [demo](https://assets.eloqueasy.de/rough_sysdyn_diagram/).
 
 ## Example 1: Show diagram immediatly
 
